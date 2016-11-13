@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-
+    <link href="/APP/view/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/APP/view/css/style.css" rel="stylesheet">
     <title><? echo $title?></title>
 
     <!-- Bootstrap core CSS -->
@@ -28,27 +29,26 @@
 </head>
 
 <body>
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<div class="container">
+    <div class="row"><
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
             </ul>
         </div><!--/.nav-collapse -->
+        </div>
+        <div class="starter-template">
+            <h1><?echo $article->title; ?></h1>
+            <p class="lead"><?echo $article->article; ?></p>
+            <? if(!empty($article->author)): ?>
+                <p> Автор : <? echo $article->author->name;?> </p>
+            <? endif; ?>
+        </div>
+        <div>
+            <p><a href="../../blog.csv" class="btn btn-small btn-primary" download>Скачать файл</a>
+        </div>
     </div>
-</div>
-
-<div class="container">
-
-    <div class="starter-template">
-        <h1><?echo $article->title; ?></h1>
-        <p class="lead"><?echo $article->article; ?></p>
-        <? if(!empty($article->author)): ?>
-            <p> Автор : <? echo $article->author->name;?> </p>
-        <? endif; ?>
-    </div>
-
 </div><!-- /.container -->
 
 

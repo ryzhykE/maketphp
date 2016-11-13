@@ -66,7 +66,7 @@ $search = \App\Model\Article::getSearchLike($search);
 var_dump($search);
 
 */
-
+/**
 
 try {
     $csv = new \App\CSV("../blog.csv");
@@ -76,7 +76,7 @@ try {
 catch (Exception $e) {
     echo "Ошибка: " . $e->getMessage();
 }
-
+*/
 
 
 

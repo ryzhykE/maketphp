@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\AController;
+use App\CSV;
 use App\Exceptions\BaseException;
 use App\Exceptions\Main;
 use App\Model;
@@ -52,6 +53,13 @@ class Index
         $article = Article::findByid($id);
         if ($article == false) {
             throw new BaseException('Ошибка 404 - не найдено');
+        }
+        try {
+            $csv = new CSV("blog.csv");
+            $csv->setCSV($article);
+        }
+        catch (Exception $e) {
+            echo "Ошибка: " . $e->getMessage();
         }
         $this->view->title = $article->title;
         $this->view->article = $article;

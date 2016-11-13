@@ -28,18 +28,4 @@ class Search
         $this->view->title = 'Поиск - ' . $this->str;
         $this->view->display(__DIR__. '/../view/search.php');
     }
-/**
-    public function actionsearch($str)
-    {
-        if (isset($_POST['txt'])) {
-            echo $this->str = strip_tags($_POST['txt']);
-        }
-
-        $serch = Article::getSerch($str);
-
-        $this->view->title = 'Результат поиска ' . $this->str;
-        $this->view->display(__DIR__. '/../view/search.php');
-    }
-
-*/
 }

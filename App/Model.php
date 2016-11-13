@@ -10,6 +10,10 @@ abstract class Model
     public $id;
     const LIMMIT = 2;
 
+    /**
+     * @param $search
+     * @return mixed
+     */
     public static function getSearchLike($search)
     {
         $db = DB::getInstance();
@@ -20,22 +24,6 @@ abstract class Model
         );
         return $data;
     }
-
-    /**
-     * @param $search
-     * @return mixed
-     */
-    public static function getSearchMatch($search)
-    {
-        $db = DB::getInstance();
-        $data = $db->query(
-            'SELECT * FROM ' . static::$table . " WHERE MATCH (title) AGAINST ('$search')" ,
-            [],
-            static::class
-        );
-        return $data;
-    }
-
 
     /**
      * @return mixed

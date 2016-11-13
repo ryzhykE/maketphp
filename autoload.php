@@ -1,7 +1,9 @@
 <?php
 
-function __autoload($class)
+spl_autoload_register(function ($class)
 {
     $path = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
-    require $path;
-}
+    if (file_exists($path)) {
+        require $path;
+    }
+});
