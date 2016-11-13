@@ -60,9 +60,27 @@ $search = 'Самый';
 $search = \App\Model\Article::getSearchMatch($search);
 var_dump($search);
 */
+/**
 $search = 'Англ';
 $search = \App\Model\Article::getSearchLike($search);
 var_dump($search);
+
+*/
+
+
+try {
+    $csv = new \App\CSV("../blog.csv");
+    $arr = \App\Model\Article::findByid(73);
+    $csv->setCSV($arr);
+}
+catch (Exception $e) {
+    echo "Ошибка: " . $e->getMessage();
+}
+
+
+
+
+
 
 
 
