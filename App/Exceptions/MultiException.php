@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Evgeniy
- * Date: 29.10.2016
- * Time: 22:59
- */
 
 namespace App\Exceptions;
-
 
 class MultiException
     extends \Exception

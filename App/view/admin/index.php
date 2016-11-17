@@ -13,7 +13,7 @@
 </div><!--/.nav-collapse -->
 <h2>Список</h2>
 <p><a href="/admin/add">Добавить новость</a></p>
-<div class="container">
+	<div class="container">
 	<table cellpadding="0" cellspacing="0" border="0" id="table" class="sortable">
 	
 	<thead>
@@ -34,7 +34,7 @@
 			<? endforeach;?>
 		</tbody>
   </table>
-		</tbody>
+		</div>
   </table>
 	<script type="text/javascript" src="/APP/view/admin/script.js"></script>
 	<script type="text/javascript">

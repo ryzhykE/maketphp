@@ -4,8 +4,6 @@ namespace App;
 
 class CSV
 {
-    use TSingleton;
-
     public function __construct($csv) {
         if (file_exists($csv)) {
             $this->csvFile = $csv;

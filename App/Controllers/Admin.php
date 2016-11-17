@@ -2,13 +2,15 @@
 
 namespace App\Controllers;
 
-
 use App\AController;
 use App\Model\Article;
+use App\Model\Author;
 
 class Admin
     extends AController
 {
+    protected $user = TRUE;
+
     public function actionDefault($page)
     {
 		/**
@@ -26,6 +28,8 @@ class Admin
 
     public function actionUpdate (int $id)
     {
+        $author = Author::findAll();
+        $this->view->author = $author;
         $article = new Article();
         $article->id = $id;
         if (isset($_POST['submit'])) {
@@ -45,6 +49,8 @@ class Admin
 
     public function actionAdd()
     {
+        $author = Author::findAll();
+        $this->view->author = $author;
         $article = new Article();
         $this->view->title = 'Добавление новости';
 
@@ -52,10 +58,13 @@ class Admin
             $article->title = $_POST['title'];
             $article->article = $_POST['article'];
             $article->author_id = $_POST['idauthor'];
-
-            if(false !== $article->save()){
+            if (!empty($article->title) && !empty($article->article) && false !== $article->save() ) {
+                $article->save();
                 header('Location: /admin');
+            } else {
+               $_SESSION['message'] = "Не все поля заполнены";
             }
+            $this->view->mess = $_SESSION['message'];
         }
         $this->view->display(__DIR__. '/../view/admin/add_form.php');
     }

@@ -5,11 +5,6 @@ namespace App\Model;
 use App\Db;
 use App\Model;
 
-/**
- * Class Article
- * @package App\Model
- * @property $author
- */
 class Article
     extends Model
 {

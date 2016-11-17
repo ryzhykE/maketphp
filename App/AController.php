@@ -3,6 +3,9 @@
 namespace App;
 
 
+use App\Exceptions\AuthException;
+use App\Model\User;
+
 abstract class AController
 {
     protected $view;
@@ -12,18 +15,4 @@ abstract class AController
         $this->view = new View();
     }
 
-    public function action($action)
-    {
-        $actMethodName = 'action' . $action;
-        if ($this->access() === false) {
-            echo 'Доступ закрыт';
-            die;
-        }
-        return $this->$actMethodName();
-    }
-
-    protected function access()
-    {
-
-    }
 }

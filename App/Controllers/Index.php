@@ -18,7 +18,6 @@ class Index
 	
 	
 	public function actionDefault()
-
     {
         $this->view->title = 'Главная';
         $this->view->display(__DIR__. '/../view/main.php');
@@ -58,7 +57,7 @@ class Index
             $csv = new CSV("blog.csv");
             $csv->setCSV($article);
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             echo "Ошибка: " . $e->getMessage();
         }
         $this->view->title = $article->title;

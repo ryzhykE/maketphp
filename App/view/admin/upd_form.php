@@ -11,8 +11,14 @@
     <input type="text" name="title" placeholder="" value="<?echo $article->title; ?>">
     <p>Текст новости</p>
     <input type="text" name="article" placeholder="" value="<?echo $article->article; ?>">
-    <p>ИД автора</p>
-    <input type="text" name="idauthor" placeholder="" value="<?echo $article ->author_id; ?>">
+    <p>Автор</p>
+    <select name="idauthor">
+        <?php foreach ($author as $item): ?>
+            <option value="<?php echo $item->id; ?>">
+                <?php echo $item->name;?>
+            </option>
+        <?php endforeach; ?>
+    </select>
     <br><br>
     <input type="submit" name="submit" value="Сохранить">
 </form>

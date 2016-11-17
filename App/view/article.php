@@ -27,7 +27,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 <div class="container">
     <div class="row"><
@@ -50,8 +49,6 @@
         </div>
     </div>
 </div><!-- /.container -->
-
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

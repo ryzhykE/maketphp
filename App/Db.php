@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 use App\Exceptions\Database;
 use App\Exceptions\DbException;
 
